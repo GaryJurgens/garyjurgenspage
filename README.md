@@ -1,1 +1,1 @@
-Site of Gary Jurgens
+Site of Gary Jurgens for displaying skills
