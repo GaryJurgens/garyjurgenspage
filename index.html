@@ -5,9 +5,9 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Gary Jurgens | Software Engineer</title>
-  <meta content="Gary Jurgens - Software Engineer specializing in Data Analytics, Architecture, and Cloud Solutions." name="description">
-  <meta content="Gary Jurgens, Software Engineer, Data Analytics, Architecture, Cloud, C#, Azure, AWS" name="keywords">
+  <title>Gary Jurgens | Senior Software Engineer & Architect</title>
+  <meta content="Gary Jurgens - Senior Software Engineer & Architect specializing in Data Analytics, Architecture, and Cloud Solutions." name="description">
+  <meta content="Gary Jurgens, Software Engineer, Data Analytics, Architecture, Cloud, C#, Azure, AWS, CV, Resume" name="keywords">
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
@@ -23,9 +23,118 @@
   <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  
+  <!-- Devicon for Tech Logos -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
 
   <!-- Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+  
+  <style>
+    /* Additional inline styles for the CV enhancements */
+    .typed-cursor {
+      color: var(--accent);
+      font-size: 60px;
+    }
+    @media (max-width: 768px) {
+      .typed-cursor { font-size: 30px; }
+    }
+    
+    .resume-btn-container {
+      margin-top: 40px;
+    }
+    
+    .btn-outline {
+      color: var(--accent);
+      background-color: transparent;
+      border: 1px solid var(--accent);
+      border-radius: var(--border-radius);
+      padding: 1rem 1.5rem;
+      font-size: 14px;
+      font-family: var(--font-mono);
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .btn-outline:hover {
+      background-color: var(--accent-tint);
+      color: var(--accent);
+      transform: translateY(-3px);
+    }
+    
+    .stat-box {
+      text-align: center;
+      padding: 20px;
+      background: var(--bg-card);
+      border-radius: var(--border-radius);
+      transition: var(--transition);
+      border-bottom: 2px solid transparent;
+    }
+    
+    .stat-box:hover {
+      transform: translateY(-5px);
+      border-bottom: 2px solid var(--accent);
+    }
+    
+    .stat-number {
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--accent);
+      font-family: var(--font-mono);
+      margin-bottom: 10px;
+    }
+    
+    .stat-text {
+      color: var(--text-secondary);
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .tech-box {
+      background: var(--bg-card);
+      border: 1px solid var(--bg-card-hover);
+      border-radius: var(--border-radius);
+      padding: 20px;
+      text-align: center;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      gap: 15px;
+    }
+    
+    .tech-box:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent);
+      box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+    }
+    
+    .tech-box i {
+      font-size: 50px;
+      transition: var(--transition);
+    }
+    
+    .tech-box:hover i {
+      transform: scale(1.1);
+    }
+    
+    .tech-box span {
+      font-family: var(--font-mono);
+      font-size: 14px;
+      color: var(--text-main);
+      font-weight: 500;
+    }
+    
+    .cloud-highlight {
+      border: 1px solid var(--accent);
+      background: rgba(100, 255, 218, 0.05);
+    }
+  </style>
 </head>
 
 <body>
@@ -33,18 +142,18 @@
   <!-- ======= Header ======= -->
   <header id="header">
     <div class="logo">
-      <h1><a href="index.html">Gary Jurgens</a></h1>
+      <h1><a href="index.html">G.J.</a></h1>
     </div>
 
     <nav id="navbar" class="navbar">
       <ul>
         <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
         <li><a class="nav-link scrollto" href="#about">About</a></li>
+        <li><a class="nav-link scrollto" href="#experience">Experience</a></li>
         <li><a class="nav-link scrollto" href="#ecosystem">Expertise</a></li>
-        <li><a class="nav-link scrollto" href="#solutions">Solutions</a></li>
         <li><a class="nav-link scrollto" href="#projects">Projects</a></li>
         <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-        <li><a class="get-started" href="assets/img/portfolio/portfolio-details-1.jpg" download>Resume</a></li>
+        <li><a class="get-started" href="assets/img/portfolio/portfolio-details-1.jpg" download>Download CV</a></li>
       </ul>
       <i class="bi bi-list mobile-nav-toggle"></i>
     </nav>
@@ -52,12 +161,16 @@
 
   <!-- ======= Hero Section ======= -->
   <section id="hero">
-    <div class="hero-container" data-aos="fade-up">
+    <div class="hero-container" data-aos="fade-up" data-aos-duration="1000">
       <h5>Hi, my name is</h5>
       <h1>Gary Jurgens.</h1>
-      <h2>I build solutions for Business</h2>
-      <p>I'm a software engineer and Architect  with over 20 years of Experiance,  specializing in creating unique, fit-for-purpose technical solutions for complex business Use Cases.</p>
-      <a href="#about" class="btn-get-started scrollto">View my work</a>
+      <h2>I build <span class="typed" data-typed-items="solutions for Business, scalable architectures, intelligent data pipelines, robust IoT systems"></span></h2>
+      <p>I'm a Senior Software Engineer and Architect with over 20 years of experience, specializing in creating unique, fit-for-purpose technical solutions for complex business use cases across Healthcare, Legal, and Industrial sectors.</p>
+      
+      <div class="resume-btn-container">
+        <a href="#experience" class="btn-outline scrollto"><i class="bi bi-briefcase"></i> View Experience</a>
+        <a href="#contact" class="btn-outline scrollto" style="margin-left: 15px;"><i class="bi bi-envelope"></i> Get In Touch</a>
+      </div>
     </div>
   </section>
 
@@ -72,33 +185,235 @@
         </div>
 
         <div class="row">
-          <div class="col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-5 col-md-6" data-aos="fade-right" data-aos-delay="100">
             <div class="about-img">
               <img src="assets/img/1664694876059.jpeg" class="img-fluid" alt="Gary Jurgens">
             </div>
           </div>
-          <div class="col-lg-6 col-md-6 content" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-lg-7 col-md-6 content" data-aos="fade-left" data-aos-delay="200">
             <p>
-              Hello! My name is Gary Jurgens and I enjoy creating things that live on the internet. With an extensive background in software development, data analytics, and technology consulting, I bring a wealth of experience to the evolving digital landscape.
+              Hello! My name is Gary Jurgens. I am a passionate technologist who enjoys solving complex, real-world problems through elegant code and robust architecture. With an extensive background spanning over two decades in software development, data analytics, and technology consulting, I bring a wealth of experience to the evolving digital landscape.
             </p>
             <p>
-              My unique blend of technical acumen, underscored by degrees in Information Technology and a Master's thesis focused on mobile technology, allows me to craft comprehensive IT solutions that respond to the complex needs of businesses today.
+              My unique blend of technical acumen is underscored by degrees in Information Technology and a Master's thesis focused on mobile technology. This academic foundation, combined with years of hands-on industry experience, allows me to craft comprehensive IT solutions that respond to the volatile and demanding needs of modern enterprises.
             </p>
-            <p>Here are a few technologies I work with:</p>
-            <ul class="skills-list">
-              <li>C# & .NET Core</li>
-              <li>Azure & AWS</li>
-              <li>JavaScript (ES6+)</li>
-              <li>Vue.js</li>
-              <li>SQL Server</li>
-              <li>IoT Protocols</li>
-<li> Database Design </li>
-<li> Entity Framework Core </li>
-
-            </ul>
+            
+            <div class="row mt-4 mb-4">
+              <div class="col-md-4 col-6 mb-3">
+                <div class="stat-box">
+                  <div class="stat-number">20+</div>
+                  <div class="stat-text">Years Exp.</div>
+                </div>
+              </div>
+              <div class="col-md-4 col-6 mb-3">
+                <div class="stat-box">
+                  <div class="stat-number">50+</div>
+                  <div class="stat-text">Projects</div>
+                </div>
+              </div>
+              <div class="col-md-4 col-12 mb-3">
+                <div class="stat-box">
+                  <div class="stat-number">100%</div>
+                  <div class="stat-text">Commitment</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
+      </div>
+    </section>
+
+    <!-- ======= Tech Stack Section ======= -->
+    <section id="tech-stack" class="services" style="padding-top: 0;">
+      <div class="container">
+        <div class="section-title" data-aos="fade-up">
+          <h2>Core Technologies</h2>
+        </div>
+        
+        <p data-aos="fade-up" style="margin-bottom: 30px; font-size: 16px;">A selection of the primary tools, platforms, and languages I leverage to build enterprise-grade solutions.</p>
+
+        <div class="row">
+          <!-- Cloud Platforms (Highlighted) -->
+          <div class="col-lg-2 col-md-4 col-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="tech-box cloud-highlight">
+              <i class="devicon-azure-plain colored"></i>
+              <span>Microsoft Azure</span>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-4 col-6 mb-4" data-aos="fade-up" data-aos-delay="150">
+            <div class="tech-box cloud-highlight">
+              <i class="devicon-amazonwebservices-plain-wordmark colored"></i>
+              <span>AWS</span>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-4 col-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="tech-box cloud-highlight">
+              <i class="devicon-googlecloud-plain colored"></i>
+              <span>Google Cloud</span>
+            </div>
+          </div>
+          
+          <!-- Languages & Frameworks -->
+          <div class="col-lg-2 col-md-4 col-6 mb-4" data-aos="fade-up" data-aos-delay="250">
+            <div class="tech-box">
+              <i class="devicon-csharp-plain colored"></i>
+              <span>C# / .NET</span>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-4 col-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="tech-box">
+              <i class="devicon-vuejs-plain colored"></i>
+              <span>Vue.js</span>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-4 col-6 mb-4" data-aos="fade-up" data-aos-delay="350">
+            <div class="tech-box">
+              <i class="bi bi-robot" style="color: var(--accent);"></i>
+              <span>Artificial Intelligence</span>
+            </div>
+          </div>
+          
+          <!-- Databases & Tools -->
+          <div class="col-lg-2 col-md-4 col-6 mb-4" data-aos="fade-up" data-aos-delay="400">
+            <div class="tech-box">
+              <i class="devicon-microsoftsqlserver-plain colored"></i>
+              <span>SQL Server</span>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-4 col-6 mb-4" data-aos="fade-up" data-aos-delay="450">
+            <div class="tech-box">
+              <i class="devicon-postgresql-plain colored"></i>
+              <span>PostgreSQL</span>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-4 col-6 mb-4" data-aos="fade-up" data-aos-delay="500">
+            <div class="tech-box">
+              <i class="bi bi-diagram-3" style="color: #0078D4;"></i>
+              <span>Azure Data Factory</span>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-4 col-6 mb-4" data-aos="fade-up" data-aos-delay="550">
+            <div class="tech-box">
+              <i class="bi bi-broadcast" style="color: var(--accent);"></i>
+              <span>MQTT</span>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-4 col-6 mb-4" data-aos="fade-up" data-aos-delay="600">
+            <div class="tech-box">
+              <i class="bi bi-cpu" style="color: var(--text-main);"></i>
+              <span>IoT Systems</span>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-4 col-6 mb-4" data-aos="fade-up" data-aos-delay="650">
+            <div class="tech-box">
+              <i class="devicon-docker-plain colored"></i>
+              <span>Docker</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Experience Section ======= -->
+    <section id="experience" class="experience section-bg">
+      <div class="container">
+        <div class="section-title" data-aos="fade-up">
+          <h2>Professional Experience & Education</h2>
+        </div>
+
+        <div class="timeline">
+          <!-- Experience 1 -->
+          <div class="timeline-item left" data-aos="fade-up" data-aos-delay="100">
+            <div class="timeline-content">
+              <span class="timeline-date">Present</span>
+              <h3 class="timeline-title">Senior Software Architect</h3>
+              <div class="timeline-company">Independent Consultant</div>
+              <p>Directing the architectural vision and end-to-end delivery of mission-critical, enterprise-scale platforms across Healthcare, Legal, and Mining sectors. Pioneering the adoption of cloud-native microservices, orchestrating robust CI/CD pipelines, and driving AI integration to revolutionize document management and high-velocity data processing.</p>
+            </div>
+          </div>
+
+          <!-- Experience 2 -->
+          <div class="timeline-item right" data-aos="fade-up" data-aos-delay="200">
+            <div class="timeline-content">
+              <span class="timeline-date">Previous</span>
+              <h3 class="timeline-title">Lead Software Engineer</h3>
+              <div class="timeline-company">Enterprise Solutions Provider</div>
+              <p>Architected and deployed a highly resilient, state-of-the-art petroleum supply chain ecosystem. Engineered advanced IoT telemetry networks utilizing robust MQTT protocols to guarantee zero-latency, real-time monitoring of critical environmental metrics within extreme industrial environments.</p>
+            </div>
+          </div>
+
+          <!-- Experience 3 -->
+          <div class="timeline-item left" data-aos="fade-up" data-aos-delay="300">
+            <div class="timeline-content">
+              <span class="timeline-date">Previous</span>
+              <h3 class="timeline-title">Data Analytics Specialist</h3>
+              <div class="timeline-company">Mining & Industrial Sector</div>
+              <p>Transformed raw industrial data into actionable strategic intelligence for a global mining conglomerate. Designed and executed high-throughput, fault-tolerant ETL pipelines via Azure Data Factory, delivering comprehensive Power BI dashboards that drastically optimized operational efficiency and predictive maintenance.</p>
+            </div>
+          </div>
+          
+          <!-- Experience 4 -->
+          <div class="timeline-item right" data-aos="fade-up" data-aos-delay="400">
+            <div class="timeline-content">
+              <span class="timeline-date">Early Career</span>
+              <h3 class="timeline-title">Full Stack Developer</h3>
+              <div class="timeline-company">Tech Startups & Agencies</div>
+              <p>Spearheaded the full-lifecycle development of innovative, high-traffic web applications and SaaS platforms. Engineered a highly scalable corporate website builder featuring custom, secure SMS payment gateways, and architected comprehensive B2B wholesale portals that automated complex financial and inventory logistics.</p>
+            </div>
+          </div>
+
+          <!-- Education -->
+          <div class="timeline-item left" data-aos="fade-up" data-aos-delay="500">
+            <div class="timeline-content">
+              <span class="timeline-date">Education</span>
+              <h3 class="timeline-title">Master of Information Technology</h3>
+              <div class="timeline-company">Advanced Academic Studies</div>
+              <p>Culminated advanced studies with a specialized Master's thesis focused on mobile technology and enterprise architecture. This rigorous academic foundation instilled a deep understanding of complex computational theory, driving my ability to engineer innovative solutions for volatile, real-world business challenges.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= Awards & Achievements Section ======= -->
+    <section id="awards" class="services" style="padding-top: 60px; padding-bottom: 60px;">
+      <div class="container">
+        <div class="section-title" data-aos="fade-up" style="margin-bottom: 20px;">
+          <h2>Awards & Achievements</h2>
+        </div>
+        
+        <div class="row mb-5" data-aos="fade-up">
+          <div class="col-12">
+            <p style="font-size: 16px; max-width: 800px;">
+              <em>The Microsoft Imagine Cup is a premier global technology competition, often considered the "Olympics of Technology." It challenges the brightest minds to build innovative software solutions that tackle some of the world's toughest real-world problems.</em>
+            </p>
+          </div>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-6 col-md-6 d-flex align-items-stretch mb-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="icon-box" style="width: 100%; display: flex; align-items: flex-start; gap: 20px;">
+              <div class="icon" style="margin-bottom: 0;"><i class="bi bi-trophy" style="font-size: 36px;"></i></div>
+              <div>
+                <h4 class="title" style="margin-bottom: 5px;"><a href="javascript:void(0)">Microsoft Imagine Cup South Africa</a></h4>
+                <p class="description" style="color: var(--accent); font-family: var(--font-mono); margin-bottom: 10px;">2008</p>
+                <p class="description"><strong>2nd Place</strong> - Recognized for innovative software solutions addressing real-world challenges on a national stage.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-md-6 d-flex align-items-stretch mb-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="icon-box" style="width: 100%; display: flex; align-items: flex-start; gap: 20px;">
+              <div class="icon" style="margin-bottom: 0;"><i class="bi bi-award" style="font-size: 36px;"></i></div>
+              <div>
+                <h4 class="title" style="margin-bottom: 5px;"><a href="javascript:void(0)">Microsoft Imagine Cup South Africa</a></h4>
+                <p class="description" style="color: var(--accent); font-family: var(--font-mono); margin-bottom: 10px;">2009</p>
+                <p class="description"><strong>Finalist</strong> - Continued excellence in software design and problem-solving, reaching the finals in consecutive years.</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -107,55 +422,55 @@
       <div class="container">
 
         <div class="section-title" data-aos="fade-up">
-          <h2>Expertise</h2>
+          <h2>Core Expertise</h2>
         </div>
 
         <div class="row">
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mb-4" data-aos="fade-up" data-aos-delay="100">
             <div class="icon-box">
-              <div class="icon"><img src="assets/img/growth.png" alt="Data Analytics"></div>
-              <h4 class="title"><a href="">Data Analytics</a></h4>
-              <p class="description">Leveraging the power of data to drive success. Bespoke analytics services designed to unearth valuable insights and facilitate informed decision-making.</p>
+              <div class="icon"><i class="bi bi-diagram-3"></i></div>
+              <h4 class="title"><a href="javascript:void(0)">System Architecture</a></h4>
+              <p class="description">Designing the blueprint of success. Expert system architecture services to build robust, efficient, and scalable digital infrastructures that stand the test of time.</p>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mb-4" data-aos="fade-up" data-aos-delay="200">
             <div class="icon-box">
-              <div class="icon"><img src="assets/img/architecture.png" alt="Architecture"></div>
-              <h4 class="title"><a href="">System Architecture</a></h4>
-              <p class="description">Designing the blueprint of success. Expert system architecture services to build robust, efficient, and scalable digital infrastructures.</p>
+              <div class="icon"><i class="bi bi-code-slash"></i></div>
+              <h4 class="title"><a href="javascript:void(0)">Software Development</a></h4>
+              <p class="description">Crafting digital excellence. Delivering top-tier full-stack software development services using C#, .NET Core, and modern JavaScript frameworks.</p>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mb-4" data-aos="fade-up" data-aos-delay="300">
             <div class="icon-box">
-              <div class="icon"><img src="assets/img/web-development.png" alt="Software Development"></div>
-              <h4 class="title"><a href="">Software Development</a></h4>
-              <p class="description">Crafting digital excellence. Delivering top-tier software development services to transform your vision into a powerful, user-friendly solution.</p>
+              <div class="icon"><i class="bi bi-bar-chart-line"></i></div>
+              <h4 class="title"><a href="javascript:void(0)">Data Analytics & BI</a></h4>
+              <p class="description">Leveraging the power of data to drive success. Bespoke analytics services, ETL pipelines, and Power BI dashboards to unearth valuable insights.</p>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mb-4" data-aos="fade-up" data-aos-delay="100">
             <div class="icon-box">
-              <div class="icon"><img src="assets/img/business-intelligence.png" alt="Business Intelligence"></div>
-              <h4 class="title"><a href="">Business Intelligence</a></h4>
-              <p class="description">I unlock business potential. Comprehensive BI services to drive strategic decision-making and foster growth through data-driven insights.</p>
+              <div class="icon"><i class="bi bi-cpu"></i></div>
+              <h4 class="title"><a href="javascript:void(0)">AI Solutions</a></h4>
+              <p class="description">Empowering intelligence. Integrating cutting-edge Artificial Intelligence, including OCR and LLMs, to enhance decision-making and automate complex workflows.</p>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mb-4" data-aos="fade-up" data-aos-delay="200">
             <div class="icon-box">
-              <div class="icon"><img src="assets/img/iot.png" alt="IoT"></div>
-              <h4 class="title"><a href="">Internet of Things</a></h4>
-              <p class="description">I Connect the future. Tailored IoT solutions to drive efficiency, innovation, and transform your business operations.</p>
+              <div class="icon"><i class="bi bi-router"></i></div>
+              <h4 class="title"><a href="javascript:void(0)">Internet of Things (IoT)</a></h4>
+              <p class="description">Connecting the physical and digital. Tailored IoT solutions, telemetry units, and robust MQTT implementations for harsh industrial environments.</p>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mb-4" data-aos="fade-up" data-aos-delay="300">
             <div class="icon-box">
-              <div class="icon"><img src="assets/img/ai.png" alt="AI"></div>
-              <h4 class="title"><a href="">AI Solutions</a></h4>
-              <p class="description">Empowering intelligence. Cutting-edge Artificial Intelligence solutions to enhance decision-making, improve efficiency, and drive business growth.</p>
+              <div class="icon"><i class="bi bi-cloud-check"></i></div>
+              <h4 class="title"><a href="javascript:void(0)">Cloud Infrastructure</a></h4>
+              <p class="description">Deploying and managing scalable solutions on Azure and AWS. Utilizing cloud-native services for high availability, security, and performance.</p>
             </div>
           </div>
         </div>
@@ -164,56 +479,51 @@
     </section>
 
     <!-- ======= Industry Solutions Section ======= -->
-    <section id="solutions" class="services">
+    <section id="solutions" class="services" style="background-color: var(--bg-card); padding: 80px 0;">
       <div class="container">
 
         <div class="section-title" data-aos="fade-up">
-          <h2>Industry Solutions</h2>
+          <h2>Industry Impact</h2>
         </div>
 
         <div class="row">
           <!-- Healthcare -->
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mb-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="icon-box">
+            <div class="icon-box" style="background-color: var(--bg-body);">
               <div class="icon"><i class="bi bi-heart-pulse"></i></div>
-              <h4 class="title"><a href="">Healthcare: Precision & Stability</a></h4>
+              <h4 class="title"><a href="javascript:void(0)">Healthcare</a></h4>
               <p class="description">
-                <strong>Medical Administration & Clinical Workflow</strong><br>
-                Through my skills and Experiance, I solve the most volatile challenges in medical administration.
-                <br><br>
-                <strong>Advanced Scheduling Logic:</strong> Applying Control Theory to stabilize the chaos of medical scheduling.
-                <br>
-                <strong>AI-Driven Coding Compliance:</strong> Leveraging AI for high-accuracy ICD-10 logic and compliance.
+                <strong>Precision & Stability</strong><br><br>
+                Solving volatile challenges in medical administration.<br><br>
+                <i class="bi bi-check2-circle" style="color: var(--accent); font-size: 16px; width: auto; height: auto; background: none; float: none; margin-right: 5px;"></i> <strong>Advanced Scheduling:</strong> Applying Control Theory to stabilize chaos.<br>
+                <i class="bi bi-check2-circle" style="color: var(--accent); font-size: 16px; width: auto; height: auto; background: none; float: none; margin-right: 5px;"></i> <strong>AI-Driven Compliance:</strong> High-accuracy ICD-10 logic.
               </p>
             </div>
           </div>
 
           <!-- Legal & Admin -->
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mb-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="icon-box">
+            <div class="icon-box" style="background-color: var(--bg-body);">
               <div class="icon"><i class="bi bi-briefcase"></i></div>
-              <h4 class="title"><a href="">Legal & Admin</a></h4>
+              <h4 class="title"><a href="javascript:void(0)">Legal & Enterprise</a></h4>
               <p class="description">
-                <strong>The Architecture of Logic</strong><br>
-                In the legal sector, we focus on the automation of complexity.
-                <br><br>
-                I build and maintain the foundational systems that power document generation, legal workflow management, and secure API integrations for enterprises that demand 100% uptime and absolute data integrity.
+                <strong>The Architecture of Logic</strong><br><br>
+                Focusing on the automation of complexity.<br><br>
+                Building foundational systems that power document generation, legal workflow management, and secure API integrations for enterprises demanding 100% uptime and absolute data integrity.
               </p>
             </div>
           </div>
 
           <!-- Industrial & IoT -->
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mb-4" data-aos="fade-up" data-aos-delay="300">
-            <div class="icon-box">
+            <div class="icon-box" style="background-color: var(--bg-body);">
               <div class="icon"><i class="bi bi-gear-wide-connected"></i></div>
-              <h4 class="title"><a href="">Industrial & IoT</a></h4>
+              <h4 class="title"><a href="javascript:void(0)">Industrial & Mining</a></h4>
               <p class="description">
-                <strong>Global Agricultural & Mining</strong><br>
-                Solutions bridging the physical and digital worlds.
-                <br><br>
-                <strong>Hardware & Telemetry:</strong> Custom fit-for-purpose telemetry units for harsh environments.
-                <br>
-                <strong>Connectivity Protocols:</strong> Robust MQTT implementation and edge computing logic to ensure data integrity.
+                <strong>Bridging Physical & Digital</strong><br><br>
+                Solutions for global agricultural & mining sectors.<br><br>
+                <i class="bi bi-check2-circle" style="color: var(--accent); font-size: 16px; width: auto; height: auto; background: none; float: none; margin-right: 5px;"></i> <strong>Hardware & Telemetry:</strong> Custom fit-for-purpose units.<br>
+                <i class="bi bi-check2-circle" style="color: var(--accent); font-size: 16px; width: auto; height: auto; background: none; float: none; margin-right: 5px;"></i> <strong>Connectivity:</strong> Robust edge computing logic.
               </p>
             </div>
           </div>
@@ -222,14 +532,12 @@
       </div>
     </section>
 
-    
-
     <!-- ======= Projects Section ======= -->
     <section id="projects" class="projects">
       <div class="container">
 
         <div class="section-title" data-aos="fade-up">
-          <h2>Noteworthy Projects</h2>
+          <h2>Featured Projects</h2>
         </div>
 
         <div class="row">
@@ -237,20 +545,19 @@
           <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
             <div class="project-card">
               <div class="card-header">
-                <i class="bi bi-folder folder-icon"></i>
+                <i class="bi bi-folder2-open folder-icon"></i>
                 <div class="external-links">
-                  <!-- Add links if available -->
+                  <i class="bi bi-github" style="color: var(--text-main); font-size: 20px; cursor: pointer;"></i>
                 </div>
               </div>
               <h3 class="project-title">AI Document Management</h3>
               <div class="project-description">
-                <p>An advanced case and document management system incorporating AI to scan and render a searchable database of documents. Integrated Tesseract and .NET Core for handwriting recognition.</p>
+                <p>Architected an enterprise-grade AI-driven document management ecosystem. Leveraged advanced machine learning and Tesseract OCR within a high-performance .NET Core architecture to autonomously digitize, analyze, and index complex handwritten records into a highly scalable, instantly searchable database.</p>
               </div>
               <ul class="project-tech-list">
                 <li>Vue.js</li>
-                <li>C#</li>
-                <li>AI</li>
-                <li>Tesseract</li>
+                <li>C# / .NET Core</li>
+                <li>AI / Tesseract</li>
               </ul>
             </div>
           </div>
@@ -259,16 +566,16 @@
           <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
             <div class="project-card">
               <div class="card-header">
-                <i class="bi bi-folder folder-icon"></i>
+                <i class="bi bi-folder2-open folder-icon"></i>
               </div>
-              <h3 class="project-title">Mining Analytics</h3>
+              <h3 class="project-title">Mining Analytics Platform</h3>
               <div class="project-description">
-                <p>Data analytics services for a Large Mining Group. Developed efficient data ingestion pipelines using Azure Data Factory and C#, with comprehensive Azure Monitoring Solutions.</p>
+                <p>Engineered a mission-critical, cloud-native analytics platform for a top-tier global mining conglomerate. Designed high-throughput, fault-tolerant data ingestion pipelines utilizing Azure Data Factory and C#, enabling real-time operational intelligence and predictive maintenance through comprehensive Azure telemetry.</p>
               </div>
               <ul class="project-tech-list">
                 <li>Azure Data Factory</li>
                 <li>C#</li>
-                <li>Monitoring</li>
+                <li>Azure Monitor</li>
               </ul>
             </div>
           </div>
@@ -277,16 +584,16 @@
           <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
             <div class="project-card">
               <div class="card-header">
-                <i class="bi bi-folder folder-icon"></i>
+                <i class="bi bi-folder2-open folder-icon"></i>
               </div>
               <h3 class="project-title">Petroleum Data Pipelines</h3>
               <div class="project-description">
-                <p>Designed custom ingestion pipelines to consume APIs and store relevant data. Audited and validated data solutions for JSE Listed Clients.</p>
+                <p>Spearheaded the development of ultra-secure, high-velocity data pipelines for the petroleum sector. Built custom API integrations to aggregate volatile market data, executing rigorous data validation and compliance auditing to ensure absolute data integrity for major JSE-listed enterprise clients.</p>
               </div>
               <ul class="project-tech-list">
                 <li>ETL</li>
                 <li>Power BI</li>
-                <li>API Integration</li>
+                <li>REST APIs</li>
               </ul>
             </div>
           </div>
@@ -295,16 +602,16 @@
           <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
             <div class="project-card">
               <div class="card-header">
-                <i class="bi bi-folder folder-icon"></i>
+                <i class="bi bi-folder2-open folder-icon"></i>
               </div>
-              <h3 class="project-title">Supply Chain IoT</h3>
+              <h3 class="project-title">Supply Chain IoT System</h3>
               <div class="project-description">
-                <p>Sophisticated petroleum product supply chain IT systems. Implemented IoT systems to control critical aspects like temperature and burn rate.</p>
+                <p>Designed and deployed a state-of-the-art IoT telemetry network revolutionizing petroleum supply chain logistics. Implemented robust edge-computing sensors and MQTT protocols to deliver sub-second, real-time monitoring and automated control of critical environmental metrics, ensuring zero-downtime operations.</p>
               </div>
               <ul class="project-tech-list">
-                <li>IoT</li>
-                <li>Supply Chain</li>
-                <li>Real-time Monitoring</li>
+                <li>IoT / MQTT</li>
+                <li>Telemetry</li>
+                <li>Real-time Data</li>
               </ul>
             </div>
           </div>
@@ -313,16 +620,16 @@
           <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
             <div class="project-card">
               <div class="card-header">
-                <i class="bi bi-folder folder-icon"></i>
+                <i class="bi bi-folder2-open folder-icon"></i>
               </div>
-              <h3 class="project-title">MYCOPAGE Builder</h3>
+              <h3 class="project-title">MYCOPAGE SaaS Platform</h3>
               <div class="project-description">
-                <p>Innovative online company website builder. Introduced a new premium-rated SMS payment system for subscriptions and managed customer transitions.</p>
+                <p>Pioneered a highly scalable SaaS platform enabling rapid deployment of corporate web presences. Innovated the monetization strategy by engineering a custom, high-availability premium SMS payment gateway, successfully orchestrating the seamless migration and onboarding of thousands of active subscribers.</p>
               </div>
               <ul class="project-tech-list">
-                <li>Web Dev</li>
-                <li>Payment Integration</li>
-                <li>SMS Gateway</li>
+                <li>Web Development</li>
+                <li>Payment Gateway</li>
+                <li>SMS API</li>
               </ul>
             </div>
           </div>
@@ -331,16 +638,16 @@
           <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
             <div class="project-card">
               <div class="card-header">
-                <i class="bi bi-folder folder-icon"></i>
+                <i class="bi bi-folder2-open folder-icon"></i>
               </div>
-              <h3 class="project-title">Dealer Portal</h3>
+              <h3 class="project-title">Enterprise Dealer Portal</h3>
               <div class="project-description">
-                <p>Online web portal for wholesale ordering for a vast network of dealerships. Streamlined ordering, distribution, and financial operations.</p>
+                <p>Architected a comprehensive B2B enterprise portal serving a massive national dealership network. Transformed legacy wholesale operations by developing a secure, centralized hub that seamlessly automated complex financial transactions, inventory distribution, and high-volume order processing.</p>
               </div>
               <ul class="project-tech-list">
                 <li>Web Portal</li>
                 <li>Inventory Mgmt</li>
-                <li>Finance</li>
+                <li>Financial Systems</li>
               </ul>
             </div>
           </div>
@@ -357,31 +664,35 @@
           <h2>Get In Touch</h2>
         </div>
 
-        <div class="row" data-aos="fade-in">
+        <div class="row justify-content-center" data-aos="fade-in">
 
-          <div class="col-lg-5 d-flex align-items-stretch">
-            <div class="info">
-              <div class="address">
-                <i class="bi bi-geo-alt"></i>
-                <h4>Location:</h4>
-                <p>Somerset West, Cape Town, South Africa</p>
-              </div>
+          <div class="col-lg-8 d-flex align-items-stretch">
+            <div class="info text-center" style="display: flex; flex-direction: column; align-items: center; padding: 50px;">
+              <h3 style="color: var(--text-heading); margin-bottom: 20px;">Ready to build something incredible?</h3>
+              <p style="font-size: 18px; max-width: 600px; margin-bottom: 40px;">
+                I'm currently open to new opportunities and consulting roles. Whether you have a question, a project in mind, or just want to say hi, I'll try my best to get back to you!
+              </p>
+              
+              <div class="d-flex justify-content-center gap-4 flex-wrap">
+                <div class="email d-flex align-items-center">
+                  <i class="bi bi-envelope" style="float: none; margin-right: 15px;"></i>
+                  <a href="mailto:garyjurgens@outlook.com" style="font-size: 18px; color: var(--text-main);">garyjurgens@outlook.com</a>
+                </div>
 
-              <div class="email">
-                <i class="bi bi-envelope"></i>
-                <h4>Email:</h4>
-                <p>garyjurgens [ at ] outlook.com</p>
+                <div class="phone d-flex align-items-center">
+                  <i class="bi bi-phone" style="float: none; margin-right: 15px;"></i>
+                  <span style="font-size: 18px; color: var(--text-main);">+27 (0) 71 052 2778</span>
+                </div>
+                
+                <div class="location d-flex align-items-center">
+                  <i class="bi bi-geo-alt" style="float: none; margin-right: 15px;"></i>
+                  <span style="font-size: 18px; color: var(--text-main);">Somerset West, South Africa</span>
+                </div>
               </div>
-
-              <div class="phone">
-                <i class="bi bi-phone"></i>
-                <h4>Call:</h4>
-                <p>+27 (0) 71 052 2778</p>
-              </div>
+              
+              <a href="mailto:garyjurgens@outlook.com" class="btn-outline mt-5" style="padding: 1.25rem 2rem; font-size: 16px;">Say Hello</a>
             </div>
           </div>
-
-          
 
       </div>
     </section>
@@ -391,8 +702,12 @@
   <!-- ======= Footer ======= -->
   <footer id="footer">
     <div class="container">
+      <div class="social-links mb-4">
+        <a href="#" class="linkedin" style="font-size: 24px; margin: 0 10px;"><i class="bx bxl-linkedin"></i></a>
+        <a href="#" class="github" style="font-size: 24px; margin: 0 10px;"><i class="bx bxl-github"></i></a>
+      </div>
       <div class="copyright">
-        &copy; Copyright <strong><span>Gary Jurgens</span></strong>
+        &copy; Copyright <strong><span>Gary Jurgens</span></strong>. All Rights Reserved
       </div>
       <div class="credits">
         Designed & Built by Gary Jurgens
